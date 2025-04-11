@@ -60,17 +60,15 @@ particlesJS("particles-js", {
     retina_detect: true,
 })
 
-
 async function askChatGPT(message) {
-    fetch("/tavola-periodica-chat?user_prompt=" + JSON.stringify(message))
-        .then(async response => {
-            response = await response.json()
-            return response.message
-        })
-        .catch(async error => {
-            alert("Errore nella richiesta")
-            return error.message
-        })
+    try {
+        const response = await fetch("/tavola-periodica-chat?user_prompt=" + encodeURIComponent(JSON.stringify(message)));
+        const data = await response.json();
+        return data.message;
+    } catch (error) {
+        alert("Errore nella richiesta");
+        return error.message;
+    }
 }
 
 const input = document.getElementById("question-input")

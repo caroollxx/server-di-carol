@@ -1,0 +1,103 @@
+<!-- DOCTYPE html: per far capire al pc che è un file html -->
+<!DOCTYPE html>
+
+<html>
+<!-- head: per mettere dei tag che servono al computer, al browser e a google -->
+<head>
+    <title>Tavola Periodica</title>
+
+    <!-- collegare file css esterno (stile della pagina) -->
+    <link rel="stylesheet" type="text/css" href="/tavola-periodica/stile.css">
+</head>
+
+<!-- body: dove ci sta effettivamente il contenuto della pagina -->
+<body>
+
+    <div id="title">
+        Tavola Periodica degli Elementi<br>
+        <span>Liceo Duca degli Abruzzi - Carol Dall'Arche - 2AA</span>
+        <span>Anno Scolastico 2024/2025</span>
+    </div>
+
+    <div id="description">
+        <div class="description-titles">
+            <div class="description-titles-text">
+                <div id="description-atomic-number">1</div>
+                <div id="description-symbol">H</div>
+                <div id="description-name">Idrogeno</div>
+            </div>
+            <div class="description-img-wrapper">
+                <img id="description-img" src="https://periodictable.com/Samples/001.x3/s9s.JPG">
+            </div>
+        </div>
+
+        <div id="description-text" class="description-text">Grazie alla sua leggerezza, in passato l'idrogeno era il gas utilizzato per gonfiare i dirigibili.</div>
+
+        <div class="scroll-section">
+
+            <div class="description-info">
+                Classe: <b id="classe">Non metalli</b>
+            </div>
+            <div class="description-info">
+                Massa atomica: <b id="atomicMass">1.008</b>
+            </div>
+            <div class="description-info">
+                Numero di ossidazione: <b id="numeroOssidazione">±1</b>
+            </div>
+            <div class="description-info">
+                Temperatura di fusione: <b id="tempFusione">14 K</b>
+            </div>
+            <div class="description-info">
+                Temperatura di ebollizione: <b id="tempEbollizione">20 K</b>
+            </div>
+            <div class="description-info">
+                Raggio atomico: <b id="raggioAtomico">30 pm</b>
+            </div>
+            <div class="description-info">
+                Densità: <b id="densita">0.0899 g/L</b>
+            </div>
+            <div class="description-info">
+                Anno di scoperta: <b id="annoScoperta">1966</b>
+            </div>
+            <div class="description-info">
+                Elettronegatività: <b id="elettronegativita">1966</b>
+            </div>
+        </div>
+
+        <div id="description-controller">
+            <div class="arrows">
+                <div id="left-arrow" class="pointer">👈</div>
+                <div id="right-arrow" class="pointer">👉</div>
+            </div>
+
+            <div onclick="hide()" id="close" class="pointer">❌</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="wrapper" class="column"></div>
+    </div>
+    <div class="center-drop-zone">
+        <input type="password" id="apikey" placeholder="Inserisci la tua chiave OpenAI">
+        <div class="center-drop-zone-text">
+            Trascina qui gli elementi per creare la tua tavola periodica personalizzata
+        </div>
+        <div class="row">
+            <div id="clear-drop-zone">
+                <div id="clear-drop-zone-icon">🗑️</div>
+                <div id="clear-drop-zone-text">Svuota</div>
+            </div>
+            <div id="drop-zone"></div>
+            <div id="arrow-container">
+                <div id="arrow-right">➡️</div>
+            </div>
+            <div id="result">
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/tavola-periodica/data.js"></script>
+    <script type="text/javascript" src="/tavola-periodica/app.js"></script>
+</body>
+</html>

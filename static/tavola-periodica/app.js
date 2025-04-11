@@ -166,7 +166,7 @@ document.getElementById("arrow-container").addEventListener("click", () => {
         return
     }
 
-    fetch("/intelligenza-artificiale-chat?user_prompt=" + JSON.stringify(lista_numeri))
+    fetch("/tavola-periodica-chat?user_prompt=" + JSON.stringify(lista_numeri))
         .then(async response => {
             response = await response.json()
             document.getElementById("result").innerHTML = response.message

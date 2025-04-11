@@ -62,7 +62,7 @@ particlesJS("particles-js", {
 
 async function askChatGPT(message) {
     try {
-        const response = await fetch("/tavola-periodica-chat?user_prompt=" + encodeURIComponent(JSON.stringify(message)));
+        const response = await fetch("/intelligenza-artificiale-chat?user_prompt=" + encodeURIComponent(JSON.stringify(message)));
         const data = await response.json();
         return data.message;
     } catch (error) {
